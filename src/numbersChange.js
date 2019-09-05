@@ -23,6 +23,7 @@ class numbersChange extends React.Component {
         else {this.zeroing()}
     };
 
+
     zeroing = (props) => {this.porps.setState({numbers: 0}, () => {this.props.saveState()})};
 
 
