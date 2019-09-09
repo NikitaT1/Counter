@@ -6,39 +6,36 @@ class App extends React.Component {
     state = {
         numbers: 0,
         maxNumber: 9,
-        minNumber: -9
+        minNumber: -9,
+        inputMax: 0,
+        inputMin: 0
     };
 
-    saveState = (props) => {
+    /*saveState = () => {
         let stateAsString = JSON.stringify (this.state);
         localStorage.setItem ("our-state", stateAsString);
-    };
+    };*/
 
     plus = () => {
-        if (this.state.numbers <= this.state.maxNumber)
+        if (this.state.numbers <= this.state.maxNumber-1)
         { let newNumberPlus = this.state.numbers+1;
-        this.setState({numbers: newNumberPlus}, () => {this.saveState()})}
-        else {{this.zeroing()} (alert('too much!'))}
+        this.setState({numbers: newNumberPlus})}
+        /*else {{this.zeroing()} (alert('too much!'))}*/
     };
 
     minus = () => {
-        if (this.state.numbers >= this.state.minNumber)
+        if (this.state.numbers >= this.state.minNumber+1)
         {let newNumberMinus = this.state.numbers-1;
-        this.setState({numbers: newNumberMinus}, () => {this.saveState()})}
-        else {{this.zeroing()} (alert('too less!'))}
+        this.setState({numbers: newNumberMinus})}
+        /*else {{this.zeroing()} (alert('too less!'))}*/
     };
 
-    zeroing = () => {this.setState({numbers: 0}, () => {this.saveState()})};
+    zeroing = () => {this.setState({numbers: 0})};
 
-    putNumber = () => {}
+    maxNumberChanged = (e) => {this.setState({inputMax: e.currentTarget.value})};
 
-    addNumber = () => {}
+    maxNumberAdd = () => {this.setState({maxNumber: this.state.inputMax})};
 
-    onKeyPress = (e) => {
-        if (e.key === "Enter") {
-            this.addNumber()
-        }
-    };
 
     render = () => {
 
@@ -48,6 +45,15 @@ class App extends React.Component {
             </h1>
         );
 
+        const element2 = (
+            <div>
+                MaxNumber: {this.state.maxNumber}
+            <div>
+                MinNumber: {this.state.minNumber}
+            </div>
+            </div>
+        )
+
         return (
             <div className="App">
                 <div className="one">
@@ -55,23 +61,26 @@ class App extends React.Component {
                         <div>
                         </div>
                     <div className="number">{element}</div>
+                    <div>{element2}</div>
                     <div>
                         <button onClick={this.minus}>Minus</button>
                         <button onClick={this.plus}>Plus</button>
                         <button onClick={this.zeroing}>Zeroing</button>
                         <div>
-                        <input type="text" placeholder="new number"
-                               onChange={()=> {
-                                       if (this.value === Number) {
-                                           {this.setState({numbers: this.value}, () => {this.saveState()})};
-                                       }
-                                   }}
-                               onKeyPress={this.onKeyPress}
-                               value={()=> alert('Bum2!')}
+                        <input type="text" placeholder="new maxNumber"
+                              /*onChange={this.maxNumberAdd} value={this.state.maxNumber}*/
+                            onChange={this.maxNumberChanged}
                         />
-                            <button onClick={()=> alert('Bum1!')}>Add</button>
+                            <button onClick={this.maxNumberAdd}>Add</button>
                         </div>
                     </div>
+                </div>
+                <div className="two">
+                    <div>
+                        <input type="text" placeholder="new number"/>
+                    </div>
+                    <button onClick={()=>{alert("Bum!")}}>Bum!</button>
+                    <button onClick={()=>{alert("Bum!")}}>Bum!</button>
                 </div>
             </div>
         );
