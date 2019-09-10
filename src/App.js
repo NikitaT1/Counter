@@ -6,15 +6,17 @@ class App extends React.Component {
 
     state = {
         numbers: 0,
-        maxNumber: 9,
-        minNumber: -9,
+        maxNumber: 2,
+        minNumber: -2,
         inputMax: 0,
         inputMin: 0,
+        addNumbers: 0,
+        SetupActive: false,
     };
 
     plus = () => {
         if (this.state.numbers < this.state.maxNumber)
-        { let newNumberPlus = this.state.numbers+1;
+        { let newNumberPlus = ++this.state.numbers;
         this.setState({numbers: newNumberPlus})}
         /*else {{this.zeroing()} (alert('too much!'))}*/
     };
@@ -31,21 +33,37 @@ class App extends React.Component {
     maxNumberChanged = (e) => {
         if (e.currentTarget.value > 0)
         {this.setState({inputMax: e.currentTarget.value})}
+        else {this.setState({inputMin: this.state.maxNumber})}
     };
 
-    maxNumberAdd = () => {
-        this.setState({maxNumber: this.state.inputMax})
+    maxNumberAdd = (e) => {
+        this.setState({maxNumber: (Math.round(this.state.inputMax))});
     };
 
     minNumberChanged = (e) => {
         if (e.currentTarget.value < 0)
-        this.setState({inputMin: e.currentTarget.value})};
+        {this.setState({inputMin: e.currentTarget.value})}
+    else {this.setState({inputMin: e.currentTarget.value*-1})}
+    };
 
-    minNumberAdd = () => {
-        this.setState({minNumber: this.state.inputMin})
+    minNumberAdd = (e) => {
+        this.setState({minNumber: (Math.round(this.state.inputMin))})
+    };
+
+    NumberChanged = (e) => {
+       this.setState({addNumbers: e.currentTarget.value})
+    };
+
+    NumberAdd = (e) => {
+        if (this.state.addNumbers < this.state.minNumber || this.state.addNumbers > this.state.maxNumber)
+        {alert('Error!')}
+        else {
+        this.setState({numbers: this.state.addNumbers})}
     };
 
     render = () => {
+
+        /*const newOne = this.state.SetupActive ? "todoList-task done" : "todoList-task";*/
 
         const element1 = (
             <div className="one">
@@ -65,20 +83,27 @@ class App extends React.Component {
 
         const element2 = (
             <div className="two">
-                <input type="text" placeholder="new maxNumber"
-                       onChange={this.maxNumberChanged}/>
-                <button onClick={this.maxNumberAdd}>Add</button>
+                <h2 className="color">SETTINGS</h2>
+                <input type="text" placeholder="new Number"
+                       onChange={this.NumberChanged}/>
+                <button onClick={this.NumberAdd}>AddMax</button>
                 <div>
+                    <input type="text" placeholder="new maxNumber"
+                           onChange={this.maxNumberChanged}/>
+                    <button onClick={this.maxNumberAdd}>AddMax</button>
+                    <div>
                     <input type="text" placeholder="new minNumber"
                            onChange={this.minNumberChanged}/>
-                    <button onClick={this.minNumberAdd}>Add</button>
+                    <button onClick={this.minNumberAdd}>AddMin</button>
                 </div>
+            </div>
             </div>
         );
 
         return (
 
-                <div> {element1} {element2} </div>
+                <div class="commonStyle"> {element1}
+            <div> {element2} </div> </div>
 
         );
     }

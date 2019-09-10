@@ -1,21 +1,38 @@
-.App {
-
+.commonStyle {
+    display: grid;
+    grid-template-columns: 100px 100px;
+    grid-template-rows: 50px 50px;
 }
 
 .one {
-
-  width: 500px;
-  padding-left: 700px;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    width: 300px;
+    height: 250px;
+    border: 2px solid orange;
+    border-radius: 5px;
+    background-color: ghostwhite;
+    margin-top: 150px;
+    margin-left: 650px;
+    text-align: center;
 
 }
 
 .two {
-
-  width: 800px;
-  padding-left: 300px;
-
+    grid-column-start: 1;
+    grid-column-end: 2;
+    width: 300px;
+    height: 250px;
+    border: 2px solid orange;
+    border-radius: 5px;
+    background-color: ghostwhite;
+    margin-top: 100px;
+    margin-left: 200px;
+    text-align: center;
 
 }
+
+
 
 .color {
   color: darkorange;
