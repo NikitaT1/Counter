@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: 100px 100px;
     grid-template-rows: 50px 50px;
+
 }
 
 .one {
@@ -16,6 +17,12 @@
     margin-left: 650px;
     text-align: center;
 
+
+}
+
+.one.noactive {
+    opacity: 0.4;
+    border: 2px solid gray;
 }
 
 .two {
@@ -30,6 +37,11 @@
     margin-left: 200px;
     text-align: center;
 
+}
+
+.two.noactive {
+    opacity: 0.4;
+    border: 2px solid gray;
 }
 
 
