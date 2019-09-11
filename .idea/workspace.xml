@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df52b278-a001-4d3e-beaa-a193ed1bf6a5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Total.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Settings.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Total.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Total.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,7 +24,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="D:/todolistGitHub" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SocialNetworkMY" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -78,7 +77,10 @@
       <workItem from="1568106196188" duration="14636000" />
       <workItem from="1568138887561" duration="7547000" />
       <workItem from="1568184266548" duration="1330000" />
-      <workItem from="1568186748963" duration="6966000" />
+      <workItem from="1568186748963" duration="7238000" />
+      <workItem from="1568194636472" duration="728000" />
+      <workItem from="1568197853314" duration="1010000" />
+      <workItem from="1568202776369" duration="2461000" />
     </task>
     <task id="LOCAL-00001" summary="add whitespace">
       <created>1567694849629</created>
@@ -122,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568144471390</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="split code">
+      <created>1568194029066</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1568194029066</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,6 +157,7 @@
     <MESSAGE value="trying to add new component" />
     <MESSAGE value="add grind, restyling" />
     <MESSAGE value="prefinal restyling, refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="prefinal restyling, refactoring" />
+    <MESSAGE value="split code" />
+    <option name="LAST_COMMIT_MESSAGE" value="split code" />
   </component>
 </project>

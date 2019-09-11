@@ -46,7 +46,11 @@
 }
 
 
-
 .color {
   color: darkorange;
+}
+
+.image.samuel{
+    width: 50px;
+    border-radius: 200px;
 }

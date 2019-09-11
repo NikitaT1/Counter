@@ -3,22 +3,23 @@ import './App.css';
 
 class Total extends React.Component {
 
+    enterValue = "Enter values";
+
     render = () => {
-        const disactTotal = this.state.SetupActive ? "one noactive" : "one";
-        const showTotal = this.state.SetupActive ? this.enterValue : this.state.numbers;
+        const disactTotal = this.props.state.SetupActive ? "one noactive" : "one";
+        const showTotal = this.props.state.SetupActive ? this.enterValue : this.state.numbers;
 
 
 
         return (
-            <div className="commonStyle">
                 <div className={disactTotal}>
                 <span onClick={this.disactivateSettings}>
                 <h2 className="color">TOTAL</h2>
                 </span>
                     <h1>{showTotal}</h1>
-                    <div> MaxNumber: {this.state.maxNumber}
+                    <div> MaxNumber: {this.props.state.maxNumber}
                         <div>
-                            MinNumber: {this.state.minNumber}
+                            MinNumber: {this.props.state.minNumber}
                         </div>
                     </div>
                     <div>

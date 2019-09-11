@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-/*import Settings from "./Settings";*/
+/*import Total from "./Total";*/
 
 class App extends React.Component {
 
@@ -12,7 +12,8 @@ class App extends React.Component {
         inputMin: 0,
         addNumbers: 0,
         SetupActive: false,
-        wrongNumber: true,
+        /*wrongNumber: true // doesn't working somehow*/
+        errorAlert: false
     };
 
     plus = () => {
@@ -43,7 +44,7 @@ class App extends React.Component {
         {this.disactivateTotal()}
         if (e.currentTarget.value > 0)
         {this.setState({inputMax: e.currentTarget.value})}
-        else {this.setState({inputMin: this.state.maxNumber})}
+        else {this.setState({inputMax: (Math.abs(e.currentTarget.value))})}
     };
 
     maxNumberAdd = (e) => {
@@ -83,17 +84,21 @@ class App extends React.Component {
         if (newNumber > this.state.minNumber && newNumber < this.state.maxNumber)
         {{this.disactivateSettings()} {this.setState({numbers: newNumber})}}
 
-        else {this.setState ({wrongNumber: true})}
+        else {this.errorModeOn()}
     };
+
+    errorModeOn = () => {
+        this.setState({errorAlert: true})
+    };
+    errorModeOff = () => {
+        this.setState({errorAlert: false})
+    }
 
 
     enterValue = "Enter values";
-    warnShow = "Error";
-
-
+    warnShow = < img src='https://www.meme-arsenal.com/memes/94e180e108739d4d26641d17a96f982f.jpg'/>;
 
     render = () => {
-
 
         const disactTotal = this.state.SetupActive ? "one noactive" : "one";
         const disactSettings = this.state.SetupActive ? "two" : "two noactive";
@@ -106,53 +111,17 @@ class App extends React.Component {
             else { return (this.state.numbers) }
         };*/
 
-
-        /*const element1 = (
-            <div className={disactTotal}>
-                <span onClick={this.disactivateSettings}>
-                <h2 className="color">TOTAL</h2>
-                </span>
-                <h1>{showTotal}</h1>
-                    <div> MaxNumber: {this.state.maxNumber} <div>
-                            MinNumber: {this.state.minNumber}
-                        </div>
-                    </div>
-                <div>
-                    <button onClick={this.minus}>Minus</button>
-                    <button onClick={this.plus}>Plus</button>
-                    <button onClick={this.zeroing}>Reset</button>
-                </div>
-            </div>
-        );*/
-
-        const element2 = (
-            <div className={disactSettings}>
-                <span onClick={this.disactivateTotal}>
-                <h2 className="color">SETTINGS</h2>
-                </span>
-                <input type="text" placeholder="new Number"
-                       onChange={this.NumberChanged} onClick={this.disactivateTotal}/>
-                <button onClick={this.NumberAdd}>AddNum</button>
-                <div>
-                    <input type="text" placeholder="new maxNumber"
-                           onChange={this.maxNumberChanged} onClick={this.disactivateTotal}/>
-                    <button onClick={this.maxNumberAdd}>AddMax</button>
-                    <div>
-                    <input type="text" placeholder="new minNumber"
-                           onChange={this.minNumberChanged} onClick={this.disactivateTotal}/>
-                    <button onClick={this.minNumberAdd}>AddMin</button>
-                </div>
-            </div>
-            </div>
-        );
-
+       
         return (
             <div className="commonStyle">
                 <div className={disactTotal}>
                 <span onClick={this.disactivateSettings}>
                 <h2 className="color">TOTAL</h2>
                 </span>
-                    <h1>{showTotal}</h1>
+                    { this.state.errorAlert
+                       ? <h1> {this.warnShow} </h1>
+                       : <h1>{showTotal}</h1>
+                    }
                     <div> MaxNumber: {this.state.maxNumber}
                         <div>
                             MinNumber: {this.state.minNumber}
@@ -167,7 +136,7 @@ class App extends React.Component {
                 <div>
                     <div className={disactSettings}>
                 <span onClick={this.disactivateTotal}>
-                <h2 className="color">SETTINGS</h2>
+                <h2 className="color" onClick={this.errorModeOff}>SETTINGS</h2>
                 </span>
                         <input type="text" placeholder="new Number"
                                onChange={this.NumberChanged} onClick={this.disactivateTotal}/>
