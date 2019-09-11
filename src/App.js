@@ -12,7 +12,7 @@ class App extends React.Component {
         inputMin: 0,
         addNumbers: 0,
         SetupActive: false,
-        test: "Bum!"
+        wrongNumber: true,
     };
 
     plus = () => {
@@ -71,22 +71,43 @@ class App extends React.Component {
     NumberAdd = (e) => {
         {this.disactivateTotal()}
         if (this.state.addNumbers < this.state.minNumber || this.state.addNumbers > this.state.maxNumber)
-        {{this.zeroing()} (alert('FUCKING WRONG NUMBER, DUDE!'))}
+        {{this.zeroing()} {this.wrongNumber()}}
         else {
         this.setState({numbers: this.state.addNumbers})}
     };
 
+    wrongNumber = () => {
+        {this.disactivateTotal()}
+        (alert('WRONG NUMBER!'));
+        let newNumber = prompt("Still wrong number!");
+        if (newNumber > this.state.minNumber && newNumber < this.state.maxNumber)
+        {{this.disactivateSettings()} {this.setState({numbers: newNumber})}}
+
+        else {this.setState ({wrongNumber: true})}
+    };
+
 
     enterValue = "Enter values";
+    warnShow = "Error";
+
+
 
     render = () => {
 
-        /*const enterValue = "Enter values and press button";*/
+
         const disactTotal = this.state.SetupActive ? "one noactive" : "one";
         const disactSettings = this.state.SetupActive ? "two" : "two noactive";
         const showTotal = this.state.SetupActive ? this.enterValue : this.state.numbers;
+       /*const showWarning = () => {
+            if (this.state.SetupActive === true && this.state.wrongNumber === true) {
+                return (this.warnShow)}
+            else if (this.state.SetupActive === true) {
+                return (this.enterValue)}
+            else { return (this.state.numbers) }
+        };*/
 
-        const element1 = (
+
+        /*const element1 = (
             <div className={disactTotal}>
                 <span onClick={this.disactivateSettings}>
                 <h2 className="color">TOTAL</h2>
@@ -102,7 +123,7 @@ class App extends React.Component {
                     <button onClick={this.zeroing}>Reset</button>
                 </div>
             </div>
-        );
+        );*/
 
         const element2 = (
             <div className={disactSettings}>
@@ -126,9 +147,44 @@ class App extends React.Component {
         );
 
         return (
-
-                <div className="commonStyle"> {element1}
-            <div> {element2} </div> </div>
+            <div className="commonStyle">
+                <div className={disactTotal}>
+                <span onClick={this.disactivateSettings}>
+                <h2 className="color">TOTAL</h2>
+                </span>
+                    <h1>{showTotal}</h1>
+                    <div> MaxNumber: {this.state.maxNumber}
+                        <div>
+                            MinNumber: {this.state.minNumber}
+                        </div>
+                    </div>
+                    <div>
+                        <button onClick={this.minus}>Minus</button>
+                        <button onClick={this.plus}>Plus</button>
+                        <button onClick={this.zeroing}>Reset</button>
+                    </div>
+                </div>
+                <div>
+                    <div className={disactSettings}>
+                <span onClick={this.disactivateTotal}>
+                <h2 className="color">SETTINGS</h2>
+                </span>
+                        <input type="text" placeholder="new Number"
+                               onChange={this.NumberChanged} onClick={this.disactivateTotal}/>
+                        <button onClick={this.NumberAdd}>AddNum</button>
+                        <div>
+                            <input type="text" placeholder="new maxNumber"
+                                   onChange={this.maxNumberChanged} onClick={this.disactivateTotal}/>
+                            <button onClick={this.maxNumberAdd}>AddMax</button>
+                            <div>
+                                <input type="text" placeholder="new minNumber"
+                                       onChange={this.minNumberChanged} onClick={this.disactivateTotal}/>
+                                <button onClick={this.minNumberAdd}>AddMin</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         );
     }
