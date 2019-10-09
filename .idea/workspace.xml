@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df52b278-a001-4d3e-beaa-a193ed1bf6a5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Settings.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Total.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Total.js" afterDir="false" />
     </list>
@@ -24,7 +24,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SocialNetworkMY" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -34,10 +34,11 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\react-training\counter2\src" />
       <recent name="D:\React-training\counter2\src" />
     </key>
   </component>
@@ -80,7 +81,14 @@
       <workItem from="1568186748963" duration="7238000" />
       <workItem from="1568194636472" duration="728000" />
       <workItem from="1568197853314" duration="1010000" />
-      <workItem from="1568202776369" duration="2461000" />
+      <workItem from="1568202776369" duration="2988000" />
+      <workItem from="1568214387117" duration="7096000" />
+      <workItem from="1568274741010" duration="606000" />
+      <workItem from="1568474270285" duration="599000" />
+      <workItem from="1570193327781" duration="781000" />
+      <workItem from="1570466479010" duration="348000" />
+      <workItem from="1570620663462" duration="7830000" />
+      <workItem from="1570630188232" duration="822000" />
     </task>
     <task id="LOCAL-00001" summary="add whitespace">
       <created>1567694849629</created>
@@ -131,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568194029066</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="refactoring, almost finished">
+      <created>1568205431571</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1568205431571</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,6 +173,7 @@
     <MESSAGE value="add grind, restyling" />
     <MESSAGE value="prefinal restyling, refactoring" />
     <MESSAGE value="split code" />
-    <option name="LAST_COMMIT_MESSAGE" value="split code" />
+    <MESSAGE value="refactoring, almost finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring, almost finished" />
   </component>
 </project>
